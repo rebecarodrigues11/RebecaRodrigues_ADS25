@@ -1,0 +1,139 @@
+<!DOCTYPE html> <!-- Declara que o documento é HTML5 -->
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- Define a codificação de caracteres (acentos e caracteres especiais) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Permite que a página se ajuste à largura da tela do dispositivo (responsivo) -->
+  <title>Escoliose Brasil</title> <!-- Título que aparece na aba do navegador -->
+  <link rel="stylesheet" href="teste.css" /> <!-- Link para arquivo CSS externo -->
+</head>
+
+<body>
+
+  <!-- BOTÃO HAMBURGER PARA MOBILE -->
+  <button class="hamburger" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+    <!-- Três linhas que formam o ícone "hamburger" para abrir/fechar menu em dispositivos móveis -->
+  </button>
+
+  <!-- CONTAINER PRINCIPAL -->
+  <div class="container">
+    <!-- Envolve toda a estrutura da página: cabeçalho, sidebar e conteúdo principal -->
+
+    <!-- TOPO DA PÁGINA -->
+    <header class="topbar">
+      <h1>Escoliose Brasil</h1> <!-- Nome da ONG / título principal da página -->
+      <nav class="topmenu" id="topmenu">
+        <!-- Menu superior com links de usuário -->
+        <a href="#">Área do voluntário</a> <!-- Link para área do voluntário -->
+        <a href="#">Configurações</a> <!-- Link para configurações -->
+        <a href="#">Sair</a> <!-- Link para logout -->
+      </nav>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="index.html">Início</a></li> <!-- Link para página inicial -->
+        <li><a href="cadastro.html">Cadastro de voluntários</a></li> <!-- Link para cadastro -->
+        <li class="dropdown">
+          <!-- Menu com subitens (dropdown) -->
+          <a href="projetos.html" class="dropbtn">Projeto ▼</a> <!-- Botão de menu com seta -->
+          <ul class="dropdown-content">
+            <!-- Submenu oculto que aparece ao passar o mouse -->
+            <li><a href="projetos.html#coluna-saudavel">Coluna Saudável</a></li> <!-- Link para seção específica -->
+            <li><a href="projetos.html#movimente-se">Movimente-se</a></li> <!-- Link para seção específica -->
+            <li><a href="projetos.html#atendimento-humanizado">Atendimento Humanizado</a></li> <!-- Link para seção específica -->
+            <li><a href="projetos.html#educar-para-cuidar">Educar para Cuidar</a></li> <!-- Link para seção específica -->
+          </ul>
+        </li>
+        <li><a href="escoliose.html">O que é Escoliose</a></li> <!-- Link informativo sobre a condição -->
+      </ul>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="main-content">
+      <section class="content">
+        <!-- Seção com conteúdo institucional da ONG -->
+        <h2>Escoliose Brasil - Cuidando de Colunas, Transformando Vidas</h2> <!-- Título principal da seção -->
+        <p>
+          A <strong>Escoliose Brasil</strong> é uma organização sem fins lucrativos dedicada à conscientização,
+          prevenção e tratamento da escoliose em todo o país. Nosso propósito é garantir que crianças, jovens e adultos
+          tenham acesso à informação, diagnóstico precoce e acompanhamento especializado, independentemente de sua condição social.
+        </p> <!-- Parágrafo descritivo sobre a ONG -->
+
+        <img src="img/escoliose brasil.png" alt="Equipe de voluntários da ONG Escoliose Brasil">
+        <!-- Imagem ilustrativa da equipe de voluntários -->
+        <p class="image-caption">Nossa equipe multidisciplinar de voluntários em uma das ações de atendimento comunitário.</p>
+        <!-- Legenda da imagem -->
+
+        <h3>🌿 Nossa Missão</h3> <!-- Subtítulo da missão da ONG -->
+        <p>
+          Promover saúde e qualidade de vida a pessoas com escoliose por meio de atendimentos gratuitos,
+          campanhas educativas e parcerias com profissionais e instituições de saúde.
+        </p> <!-- Descrição da missão -->
+
+        <img src="img/preservando o futuro.png" alt="Médicos atendendo paciente com escoliose">
+        <!-- Imagem ilustrativa de atendimento -->
+        <p class="image-caption">Atendimento gratuito a pacientes durante uma ação do projeto “Coluna Saudável”.</p>
+        <!-- Legenda da imagem -->
+
+        <h3>💙 Nossos Valores</h3> <!-- Subtítulo dos valores -->
+        <ul>
+          <li><strong>Empatia:</strong> Cuidamos de cada paciente com atenção e respeito.</li>
+          <li><strong>Transparência:</strong> Agimos com ética e responsabilidade social.</li>
+          <li><strong>Comprometimento:</strong> Buscamos constantemente melhorar nossos serviços e ampliar nosso impacto.</li>
+          <li><strong>Colaboração:</strong> Trabalhamos em rede com voluntários e parceiros em todo o Brasil.</li>
+        </ul> <!-- Lista dos valores da ONG -->
+
+        <img src="img/valores.png" alt="Aula de fisioterapia comunitária">
+        <!-- Imagem ilustrativa do projeto -->
+        <p class="image-caption">Participantes do projeto “Movimente-se” durante uma sessão de fisioterapia coletiva.</p>
+        <!-- Legenda da imagem -->
+
+        <h3>🌎 Projetos em Andamento</h3> <!-- Subtítulo dos projetos -->
+        <p>
+          Atualmente, a ONG coordena o projeto <strong>“Coluna Saudável nas Escolas”</strong>, que leva triagens posturais
+          e orientações sobre a escoliose para alunos da rede pública. Também realizamos o programa
+          <strong>“Movimente-se”</strong>, oferecendo fisioterapia gratuita e acompanhamento especializado a famílias de baixa renda.
+        </p> <!-- Descrição resumida dos projetos ativos -->
+
+        <h3>🤝 Como Ajudar</h3> <!-- Subtítulo explicando formas de contribuir -->
+        <p>
+          Você pode participar como voluntário, realizar doações ou se tornar um parceiro institucional.
+          Cada contribuição — pequena ou grande — ajuda a transformar vidas e espalhar mais saúde e conhecimento pelo Brasil.
+        </p> <!-- Parágrafo incentivando participação -->
+
+      </section>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <h2>Assine nossa Newsletter</h2> <!-- Título da seção de newsletter -->
+    <p>Receba atualizações sobre projetos, eventos e ações voluntárias diretamente no seu e-mail.</p> <!-- Descrição -->
+
+    <form id="newsletterForm">
+      <label for="nomeNewsletter">Nome:</label>
+      <input type="text" id="nomeNewsletter" name="nomeNewsletter" required />
+      <!-- Campo para inserir o nome do assinante -->
+      <label for="emailNewsletter">Email:</label>
+      <input type="email" id="emailNewsletter" name="emailNewsletter" required />
+      <!-- Campo para inserir o email do assinante -->
+      <button type="submit">Inscrever-se</button> <!-- Botão para enviar o formulário -->
+    </form>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>&copy; 2025 Escoliose Brasil. Todos os direitos reservados.</p> <!-- Direitos autorais -->
+    <p>Endereço: SCS Bloco B Ed. São Caetano - Brasília, DF</p> <!-- Endereço da ONG -->
+    <p>Contato: (61) 99999-9999 | contato@escoliosebrasil.org</p> <!-- Informações de contato -->
+  </footer>
+
+  <script src="scrypt.js"></script> <!-- Link para arquivo JavaScript -->
+</body>
+</html>

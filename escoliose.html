@@ -1,0 +1,121 @@
+<!DOCTYPE html> <!-- Declara que o documento é HTML5 -->
+<html lang="pt-BR"> <!-- Define que o idioma da página é português do Brasil -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- Define a codificação de caracteres (acentos, ç, etc.) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Permite que a página seja responsiva em dispositivos móveis -->
+  <title>O que é Escoliose</title> <!-- Título que aparece na aba do navegador -->
+  <link rel="stylesheet" href="teste.css" /> <!-- Link para o arquivo CSS externo -->
+</head>
+
+<body>
+  <!-- BOTÃO HAMBURGER PARA MOBILE -->
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <!-- Botão de menu para abrir/fechar a sidebar em telas pequenas -->
+
+  <!-- CONTAINER PRINCIPAL -->
+  <div class="container">
+    <!-- Envolve toda a estrutura principal: cabeçalho, sidebar e conteúdo -->
+
+    <!-- TOPO DA PÁGINA -->
+    <header class="topbar">
+      <h1>O que é Escoliose</h1> <!-- Título da página -->
+      <nav class="topmenu" id="topmenu">
+        <!-- Menu superior com links de usuário -->
+        <a href="#">Área do voluntário</a> <!-- Link para área do voluntário -->
+        <a href="#">Configurações</a> <!-- Link para configurações -->
+        <a href="#">Sair</a> <!-- Link para logout -->
+      </nav>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="index.html">Início</a></li> <!-- Link para página inicial -->
+        <li><a href="cadastro.html">Cadastro de voluntários</a></li> <!-- Link para cadastro -->
+        <li class="dropdown">
+          <!-- Menu com subitens (dropdown) -->
+          <a href="projetos.html" class="dropbtn">Projeto ▼</a> <!-- Botão de menu com seta -->
+          <ul class="dropdown-content">
+            <!-- Submenu oculto que aparece ao passar o mouse -->
+            <li><a href="projetos.html#coluna-saudavel">Coluna Saudável</a></li> <!-- Link para seção específica -->
+            <li><a href="projetos.html#movimente-se">Movimente-se</a></li> <!-- Link para seção específica -->
+            <li><a href="projetos.html#atendimento-humanizado">Atendimento Humanizado</a></li> <!-- Link para seção específica -->
+            <li><a href="projetos.html#educar-para-cuidar">Educar para Cuidar</a></li> <!-- Link para seção específica -->
+          </ul>
+        </li>
+        <li><a href="escoliose.html">O que é Escoliose</a></li> <!-- Link para a própria página -->
+      </ul>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="main-content">
+      <section class="content">
+        <!-- Seção de conteúdo sobre escoliose -->
+        <h2>Entendendo a Escoliose</h2> <!-- Título da seção -->
+        <p>
+          A <strong>escoliose</strong> é uma curvatura lateral anormal da coluna vertebral,
+          que pode se apresentar em forma de "C" ou "S". Essa condição pode afetar crianças,
+          adolescentes e adultos, comprometendo a postura, a mobilidade e, em casos mais graves,
+          até a função respiratória.
+        </p> <!-- Parágrafo explicativo sobre escoliose -->
+
+        <h3>Principais Tipos de Escoliose</h3> <!-- Subtítulo -->
+        <ul>
+          <li>
+            <strong>Escoliose idiopática:</strong> Tipo mais comum, sem causa conhecida.
+            Surge geralmente na adolescência e pode evoluir com o crescimento.
+            <div class="imagem-escoliose">
+              <img src="img/Escoliose idiopática.png" alt="Escoliose idiopática">
+              <p class="image-caption">Curvatura em “S” típica da escoliose idiopática.</p> <!-- Legenda da imagem -->
+            </div>
+          </li>
+          <li>
+            <strong>Escoliose congênita:</strong> Presente desde o nascimento.
+            <div class="imagem-escoliose">
+              <img src="img/Escoliose congênita.png" alt="Escoliose congênita">
+              <p class="image-caption">Deformidade vertebral associada à escoliose congênita.</p>
+            </div>
+          </li>
+          <li>
+            <strong>Escoliose neuromuscular:</strong> Associada a doenças neurológicas ou musculares.
+            <div class="imagem-escoliose">
+              <img src="img/Escoliose neuromuscular.png" alt="Escoliose neuromuscular">
+              <p class="image-caption">Curvatura causada por fraqueza muscular.</p>
+            </div>
+          </li>
+          <li>
+            <strong>Escoliose degenerativa:</strong> Aparece na fase adulta.
+            <div class="imagem-escoliose">
+              <img src="img/Escoliose degenerativa.png" alt="Escoliose degenerativa">
+              <p class="image-caption">Escoliose associada ao envelhecimento dos discos.</p>
+            </div>
+          </li>
+        </ul> <!-- Lista de tipos de escoliose com imagens e legendas -->
+
+        <h3>Sintomas Comuns</h3> <!-- Subtítulo -->
+        <p>
+          Os sintomas podem incluir dor nas costas, ombros em alturas diferentes,
+          assimetria corporal, fadiga muscular e dificuldade para respirar.
+        </p> <!-- Parágrafo sobre sintomas -->
+
+        <h3>Tratamentos Possíveis</h3> <!-- Subtítulo -->
+        <p>
+          O tratamento depende do tipo e da gravidade da escoliose.
+          Pode incluir fisioterapia, coletes ortopédicos, acompanhamento médico ou cirurgia.
+        </p> <!-- Parágrafo sobre tratamentos -->
+      </section>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>&copy; 2025 Organização Voluntária. Todos os direitos reservados.</p> <!-- Direitos autorais -->
+    <p>Endereço: SCS Bloco B, Ed. São Caetano - Brasília, DF</p> <!-- Endereço da organização -->
+    <p>Contato: (61) 99999-9999 | voluntarios@exemplo.org</p> <!-- Informações de contato -->
+  </footer>
+
+  <script src="scrypt.js"></script> <!-- Script externo para funcionalidades da página -->
+</body>
+</html>

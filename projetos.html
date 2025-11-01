@@ -1,0 +1,114 @@
+<!DOCTYPE html> <!-- Declara que o documento é HTML5 -->
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+
+<head>
+  <meta charset="UTF-8"> <!-- Define a codificação de caracteres (acentos e caracteres especiais) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Permite responsividade: ajusta largura da página à largura da tela do dispositivo -->
+  <title>Projetos em Andamento</title> <!-- Título da aba do navegador -->
+  <link rel="stylesheet" href="teste.css" /> <!-- Link para arquivo CSS externo -->
+</head>
+
+<body>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <!-- Botão para abrir/fechar menu em dispositivos móveis (hamburger menu) -->
+
+  <div class="container">
+    <!-- Container principal da página; usado para organizar layout com grid ou flexbox -->
+
+    <header class="topbar">
+      <!-- Cabeçalho da página -->
+      <h1>Escoliose Brasil</h1> <!-- Título principal da ONG -->
+      <nav class="topmenu" id="topmenu">
+        <!-- Menu superior com links de usuário -->
+        <a href="#">Área do voluntário</a> <!-- Link para área do voluntário -->
+        <a href="#">Configurações</a> <!-- Link para configurações -->
+        <a href="#">Sair</a> <!-- Link para logout -->
+      </nav>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+      <!-- Menu lateral (sidebar) -->
+      <ul>
+        <li><a href="index.html">Início</a></li> <!-- Link para página inicial -->
+        <li><a href="cadastro.html">Cadastro de voluntários</a></li> <!-- Link para cadastro -->
+        <li class="dropdown">
+          <!-- Item com submenu dropdown -->
+          <a href="projetos.html" class="dropbtn">Projeto ▼</a> <!-- Botão com seta indicando submenu -->
+          <ul class="dropdown-content">
+            <!-- Submenu oculto que aparece ao passar o mouse -->
+            <li><a href="#coluna-saudavel">Coluna Saudável</a></li> <!-- Link para seção específica -->
+            <li><a href="#movimente-se">Movimente-se</a></li> <!-- Link para seção específica -->
+            <li><a href="#atendimento-humanizado">Atendimento Humanizado</a></li> <!-- Link para seção específica -->
+            <li><a href="#educar-para-cuidar">Educar para Cuidar</a></li> <!-- Link para seção específica -->
+          </ul>
+        </li>
+        <li><a href="escoliose.html">O que é Escoliose</a></li> <!-- Link informativo -->
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <!-- Conteúdo principal da página -->
+      <section class="content">
+        <!-- Seção específica para os projetos -->
+        <h2>🌎 Projetos Atuais da ONG Escoliose Brasil</h2> <!-- Título da seção -->
+        <p>
+          A <strong>Escoliose Brasil</strong> desenvolve diversos projetos que unem voluntariado, saúde e inclusão social.  
+          Cada iniciativa busca levar diagnóstico, tratamento e informação sobre escoliose a comunidades em todo o país.
+        </p> <!-- Parágrafo descritivo sobre os projetos -->
+
+        <div class="projeto" id="coluna-saudavel">
+          <!-- Primeiro projeto -->
+          <h3>🩺 Projeto "Coluna Saudável nas Escolas"</h3> <!-- Título do projeto -->
+          <p>Triagens posturais e palestras educativas para estudantes da rede pública de ensino.</p> <!-- Descrição do projeto -->
+          <div class="imagem-escoliose2">
+            <img src="img/coluna-saudavel-nas-escolas.png" alt="Atendimento em escola pública">
+            <!-- Imagem ilustrativa do projeto -->
+            <p class="image-caption">Triagem postural em uma escola pública de Brasília.</p> <!-- Legenda da imagem -->
+          </div>
+        </div>
+
+        <div class="projeto" id="movimente-se">
+          <!-- Segundo projeto -->
+          <h3>🤸‍♀️ Projeto "Movimente-se"</h3> <!-- Título do projeto -->
+          <p>Sessões gratuitas de fisioterapia e exercícios específicos para pacientes com escoliose.</p> <!-- Descrição do projeto -->
+          <div class="imagem-escoliose2">
+            <img src="img/movimente-se.png" alt="Sessão de fisioterapia comunitária">
+            <!-- Imagem ilustrativa do projeto -->
+            <p class="image-caption">Sessão de fisioterapia gratuita realizada por nossos voluntários.</p> <!-- Legenda da imagem -->
+          </div>
+        </div>
+
+        <div class="projeto" id="atendimento-humanizado">
+          <!-- Terceiro projeto -->
+          <h3>🏥 Projeto "Atendimento Humanizado"</h3> <!-- Título do projeto -->
+          <p>Atendimento gratuito e personalizado a pessoas com escoliose em situação de vulnerabilidade.</p> <!-- Descrição -->
+          <div class="imagem-escoliose2">
+            <img src="img/atendimento humanizado.png" alt="Atendimento individual de paciente com escoliose">
+            <!-- Imagem ilustrativa do projeto -->
+            <p class="image-caption">Acompanhamento humanizado a pacientes em nossa clínica comunitária.</p> <!-- Legenda -->
+          </div>
+        </div>
+
+        <div class="projeto" id="educar-para-cuidar">
+          <!-- Quarto projeto -->
+          <h3>📚 Projeto "Educar para Cuidar"</h3> <!-- Título do projeto -->
+          <p>Capacitação de professores e profissionais da saúde para identificar sinais de escoliose em crianças.</p> <!-- Descrição -->
+          <div class="imagem-escoliose2">
+            <img src="img/educar para cuidar.png" alt="Treinamento de professores sobre escoliose">
+            <!-- Imagem ilustrativa do projeto -->
+            <p class="image-caption">Capacitação de professores sobre sinais precoces da escoliose.</p> <!-- Legenda da imagem -->
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer class="rodape">
+    <!-- Rodapé da página -->
+    <p>&copy; 2025 Escoliose Brasil. Todos os direitos reservados.</p> <!-- Direitos autorais -->
+    <p>Endereço: SCS Bloco B Ed. São Caetano - Brasília, DF</p> <!-- Endereço da ONG -->
+    <p>Contato: (61) 99999-9999 | contato@escoliosebrasil.com</p> <!-- Informações de contato -->
+  </footer>
+</body>
+</html>
