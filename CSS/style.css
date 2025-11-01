@@ -1,0 +1,336 @@
+/* ==== CONFIGURAÇÕES GERAIS ==== */
+* {
+  box-sizing: border-box; /* Faz com que padding e border sejam incluídos no tamanho total do elemento */
+  margin: 0;              /* Remove margens padrão de todos os elementos */
+  padding: 0;             /* Remove padding padrão de todos os elementos */
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif; /* Define fonte principal da página */
+  color: #333;                                /* Define cor padrão do texto */
+  min-height: 100vh;                          /* Garante que o corpo ocupe no mínimo a altura da tela */
+  background-color: #f9f9fb;                  /* Cor de fundo da página */
+}
+
+/* ==== GRID DE 12 COLUNAS ==== */
+.container {
+  display: grid;                               /* Define layout em grid */
+  grid-template-columns: 220px 1fr;            /* Colunas: sidebar fixa 220px e restante flexível */
+  grid-template-rows: auto 1fr auto;           /* Linhas: topbar automática, main flexível, footer automática */
+  grid-template-areas:                          /* Define áreas nomeadas para facilitar o posicionamento */
+    "topbar topbar"
+    "sidebar main"
+    "sidebar footer";
+  min-height: 100vh;                           /* Garante que o container ocupe toda a altura da tela */
+}
+
+/* ==== SIDEBAR ==== */
+.sidebar {
+  grid-area: sidebar;                          /* Posiciona a sidebar na área 'sidebar' do grid */
+  background-color: #1e2d44;                   /* Mantém a cor de fundo original */
+  color: white;                                /* Texto branco */
+  padding: 25px 15px;                          /* Espaçamento interno */
+  display: flex;                               /* Layout flexível dentro da sidebar */
+  flex-direction: column;                      /* Organiza os itens verticalmente */
+  overflow-y: auto;                            /* Permite scroll vertical se o conteúdo ultrapassar a altura */
+  position: sticky;                            /* Mantém a sidebar fixa ao rolar */
+  top: 0;                                      /* Fixa no topo da tela */
+  height: 100vh;                               /* Ocupa toda a altura da viewport */
+}
+
+.sidebar ul {
+  list-style: none;                            /* Remove os marcadores da lista */
+}
+
+.sidebar li {
+  margin: 12px 0;                              /* Espaço entre os itens da lista */
+}
+
+.sidebar a {
+  color: white;                                /* Cor do link branca */
+  text-decoration: none;                       /* Remove sublinhado */
+  padding: 10px 15px;                          /* Espaçamento interno do link */
+  display: block;                              /* Faz o link ocupar toda a largura do item */
+  border-radius: 4px;                          /* Cantos arredondados */
+  transition: background 0.2s;                 /* Transição suave para efeito hover */
+}
+
+.sidebar a:hover {
+  background-color: #314a6e;                   /* Cor de fundo ao passar o mouse */
+}
+
+/* Dropdown submenu */
+.sidebar .dropdown {
+  position: relative;                          /* Necessário para posicionamento do submenu */
+}
+
+.sidebar .dropdown-content {
+  display: none;                               /* Esconde submenu por padrão */
+  list-style: none;                            /* Remove marcadores da lista */
+  padding-left: 15px;                          /* Indenta submenu */
+}
+
+.sidebar .dropdown:hover .dropdown-content {
+  display: block;                              /* Mostra submenu ao passar o mouse sobre o item pai */
+}
+
+.sidebar .dropdown-content li {
+  margin: 5px 0;                               /* Espaço entre itens do submenu */
+}
+
+/* ==== TOPO ==== */
+.topbar {
+  grid-area: topbar;                            /* Posiciona a topbar na área 'topbar' do grid */
+  background-color: #dfe3ee;                   /* Cor de fundo da barra superior */
+  display: flex;                               /* Layout flexível */
+  justify-content: space-between;              /* Espaço entre título e menu */
+  align-items: center;                          /* Alinha verticalmente os itens */
+  padding: 15px 30px;                           /* Espaçamento interno */
+  border-bottom: 1px solid #ccc;               /* Linha de separação inferior */
+}
+
+.topbar h1 {
+  color: #1e2d44;                              /* Cor do título */
+  font-size: 1.6rem;                           /* Tamanho da fonte */
+  margin: 0;                                   /* Remove margem padrão */
+  flex-shrink: 0;                              /* Evita que o título encolha */
+}
+
+.topmenu {
+  display: flex;                               /* Menu horizontal */
+  gap: 20px;                                   /* Espaço entre os links */
+}
+
+.topmenu a {
+  text-decoration: none;                       /* Remove sublinhado */
+  color: #1e2d44;                              /* Cor do link */
+  font-weight: 500;                             /* Peso da fonte */
+  padding: 5px 10px;                           /* Espaçamento interno */
+  transition: color 0.2s, background 0.2s;     /* Animação suave ao passar o mouse */
+}
+
+.topmenu a:hover {
+  color: #0b5ed7;                              /* Cor do link ao passar o mouse */
+  background-color: rgba(11, 94, 215, 0.1);    /* Fundo leve ao passar o mouse */
+  border-radius: 4px;                           /* Cantos arredondados */
+}
+
+/* Botão hamburger */
+.hamburger {
+  display: none;                               /* Esconde por padrão em desktop */
+  flex-direction: column;                      /* Organiza linhas verticalmente */
+  justify-content: space-between;              /* Espaço entre as barras */
+  width: 25px;                                 /* Largura do botão */
+  height: 18px;                                /* Altura do botão */
+  cursor: pointer;                             /* Cursor de mãozinha */
+}
+
+.hamburger span {
+  display: block;                              /* Cada barra é um bloco */
+  height: 3px;                                 /* Altura da barra */
+  background-color: #1e2d44;                   /* Cor da barra */
+  border-radius: 2px;                           /* Arredonda as extremidades */
+}
+
+/* Menu ativo em mobile */
+.topmenu.mobile-hidden { display: none; }       /* Menu escondido por padrão em mobile */
+.topmenu.mobile-active {
+  display: flex;                                /* Exibe menu */
+  flex-direction: column;                       /* Organiza verticalmente */
+  gap: 10px;                                    /* Espaço entre links */
+  margin-top: 10px;                             /* Espaçamento superior */
+}
+
+/* ==== CONTEÚDO PRINCIPAL ==== */
+.main-content {
+  grid-area: main;                              /* Posiciona conteúdo na área 'main' */
+  display: grid;                                /* Grid interno para seções */
+  grid-template-columns: repeat(12, 1fr);       /* Divide em 12 colunas iguais */
+  gap: 20px;                                    /* Espaçamento entre colunas */
+  padding: 30px;                                /* Espaçamento interno */
+  background: linear-gradient(to bottom right, #336699, #6699cc); /* Fundo gradiente */
+  color: white;                                 /* Cor do texto */
+  transition: opacity 0.35s ease;               /* Transição para efeito fade */
+  opacity: 1;
+}
+
+.main-content.fade-out {
+  opacity: 0;
+}
+
+.main-content > section {
+  display: flex;                                /* Layout flexível para seções */
+  flex-direction: column;                       /* Itens empilhados verticalmente */
+  background: rgba(255,255,255,0.1);           /* Fundo semitransparente */
+  padding: 20px;                                /* Espaçamento interno */
+  border-radius: 12px;                          /* Cantos arredondados */
+  grid-column: span 12;                         /* Ocupa todas as 12 colunas */
+}
+
+/* Colunas customizadas */
+.col-6 { grid-column: span 6; }                /* Ocupa 6 colunas */
+.col-4 { grid-column: span 4; }                /* Ocupa 4 colunas */
+.col-3 { grid-column: span 3; }                /* Ocupa 3 colunas */
+
+/* ==== RODAPÉ ==== */
+.rodape {
+  grid-area: footer;                            /* Posiciona na área 'footer' */
+  background-color: #1e2d44;                    /* Cor de fundo igual sidebar */
+  color: white;                                 /* Texto branco */
+  text-align: center;                           /* Centraliza texto */
+  padding: 20px;                                /* Espaçamento interno */
+  font-size: 0.9rem;                            /* Tamanho da fonte */
+}
+
+/* ==== FORMULÁRIOS ==== */
+form {
+  display: flex;                                /* Layout flexível */
+  flex-direction: column;                       /* Campos empilhados verticalmente */
+  gap: 20px;                                    /* Espaço entre campos */
+  max-width: 800px;                             /* Largura máxima do formulário */
+  margin: 0 auto;                               /* Centraliza horizontalmente */
+  padding: 20px;                                /* Espaçamento interno */
+  background-color: #79a9e9;                    /* Fundo azul claro */
+  border-radius: 8px;                           /* Cantos arredondados */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);       /* Sombra leve */
+}
+
+#resultado {
+  text-align: center;                            /* Centraliza o texto do resultado */
+  font-weight: bold;                             /* Negrito */
+  margin-top: 15px;                              /* Espaço superior */
+  color: #1e2d44;                                /* Cor do texto */
+  font-size: 1.1rem;                             /* Tamanho da fonte */
+}
+
+fieldset {
+  border: 1px solid #0b08a3b2;                  /* Borda azul semitransparente */
+  border-radius: 6px;                            /* Cantos arredondados */
+  padding: 15px;                                 /* Espaçamento interno */
+  display: flex;                                 /* Layout flexível */
+  flex-direction: column;                        /* Campos empilhados */
+  gap: 15px;                                     /* Espaço entre campos */
+}
+
+fieldset legend {
+  font-weight: bold;                             /* Texto em negrito */
+  padding: 0 5px;                                /* Espaçamento horizontal */
+}
+
+form label {
+  font-weight: 600;                              /* Peso da fonte */
+  margin-bottom: 5px;                            /* Espaço abaixo do label */
+  color: #1e2d44;                                /* Cor do texto */
+  display: flex;                                 /* Layout flexível para ícones */
+  align-items: center;                           /* Alinha verticalmente ícone e texto */
+  gap: 8px;                                      /* Espaço entre ícone e texto */
+}
+
+/* Ícones por campo */
+label[for="nome"]::before { content: "👤"; }    
+label[for="cpf"]::before { content: "🆔"; }     
+label[for="nascimento"]::before { content: "🎂"; }
+label[for="email"]::before { content: "✉️"; }  
+label[for="telefone"]::before { content: "📞"; }
+label[for="endereco"]::before { content: "🏠"; }
+label[for="cep"]::before { content: "🏷️"; }
+label[for="cidade"]::before { content: "🏙️"; }
+label[for="estado"]::before { content: "🗺️"; }
+label[for="disponibilidade"]::before { content: "⏰"; }
+label[for="mensagem"]::before { content: "📝"; }
+
+form input,
+form select,
+form textarea {
+  padding: 8px;                                  /* Espaçamento interno dos campos */
+  border-radius: 4px;                             /* Cantos arredondados */
+  border: 1px solid #0b08a3b2;                   /* Borda azul clara */
+  font-size: 1rem;                                /* Tamanho da fonte */
+  width: 100%;                                    /* Largura total do container */
+  box-sizing: border-box;                          /* Inclui padding e border na largura */
+}
+
+form textarea { resize: vertical; }               /* Permite redimensionamento vertical apenas */
+
+form button {
+  padding: 12px;                                  /* Espaçamento interno */
+  border-radius: 4px;                             /* Cantos arredondados */
+  background-color: #2c3e50;                      /* Cor de fundo do botão */
+  color: white;                                   /* Cor do texto */
+  border: none;                                   /* Sem borda */
+  cursor: pointer;                                /* Cursor de mãozinha */
+  font-size: 1rem;                                /* Tamanho da fonte */
+  transition: background-color 0.3s ease;         /* Transição suave ao passar o mouse */
+}
+
+form button:hover { background-color: #1b2835; }   /* Cor do botão ao passar o mouse */
+
+.form-row {
+  display: flex;                                   /* Layout flexível horizontal */
+  flex-wrap: wrap;                                 /* Permite quebrar linha se necessário */
+  gap: 15px;                                       /* Espaço entre os elementos */
+}
+
+.form-row > * { flex: 1; }                         /* Todos os elementos da linha ocupam espaço igual */
+
+/* ==== RESPONSIVIDADE ==== */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;                     /* Uma coluna só em telas menores */
+    grid-template-areas:
+      "topbar"
+      "main"
+      "footer";
+  }
+  .sidebar { display: none; }                        /* Esconde sidebar em mobile */
+  .hamburger { display: flex; }                      /* Mostra botão hamburger */
+  .topmenu { display: none; }                        /* Esconde menu padrão */
+}
+
+@media (max-width: 576px) { .main-content { padding: 15px; } } /* Ajusta padding em telas pequenas */
+
+@media (max-width: 480px) {
+  .topbar {
+    flex-direction: column;                          /* Topbar vertical em telas pequenas */
+    align-items: flex-start;                          /* Alinha itens à esquerda */
+    gap: 10px;                                       /* Espaço entre itens */
+  }
+  .topmenu.mobile-active { width: 100%; }           /* Menu mobile ocupa largura total */
+}
+
+/* ==== NEWSLETTER ==== */
+.newsletter {
+  grid-column: span 12;                              /* Ocupa todas as colunas do grid */
+  background: linear-gradient(135deg, #e8f5ff, #ffffff); /* Fundo gradiente */
+  padding: 25px;                                     /* Espaçamento interno */
+  border-radius: 16px;                               /* Cantos arredondados */
+  text-align: center;                                /* Centraliza conteúdo */
+}
+
+/* ==== IMAGENS ==== */
+img {
+  width: 100%;                                      /* Imagem ocupa toda a largura do container */
+  max-width: 800px;                                 /* Limita largura máxima */
+  border-radius: 20px;                               /* Cantos arredondados */
+  display: block;                                   /* Remove espaçamento abaixo da imagem */
+  margin: 40px auto;                                /* Centraliza imagem e adiciona margem vertical */
+}
+
+
+/* Imagem com classe .imagem-escoliose */
+.imagem-escoliose img {
+  width: 700px;                                     /* Define a largura da imagem */
+  height: auto;                                     /* Mantém a proporção original */
+  max-width: 100%;                                  /* Garante responsividade */
+  border-radius: 20px;                              /* Arredonda as bordas */
+  margin-top: 16px;                                 /* Espaçamento acima */
+  margin-bottom: 16px;                              /* Espaçamento abaixo */
+}
+
+/* Segunda variação de imagem */
+.imagem-escoliose2 img {
+  width: 550px;                                     /* Define a largura da imagem */
+  height: auto;                                     /* Mantém proporção */
+  max-width: 100%;                                  /* Garante que não ultrapasse o container */
+  border-radius: 20px;                              /* Arredonda as bordas da imagem */
+}
